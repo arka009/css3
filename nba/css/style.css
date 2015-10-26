@@ -1,0 +1,170 @@
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul,ol,li{
+    list-style: none;
+}
+
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    height: 100%;
+}
+
+.container .m-imgs{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.container .m-imgs img{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.container .m-imgs img:nth-of-type(1){
+    display: block;
+}
+.container .m-nav{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.container .m-nav ul{
+    display: -webkit-box;
+    display: box;
+}
+.container .m-nav li{
+    position: relative;
+    margin-right: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 5px #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: all 1s ease;
+    transition: all 0.8s ease;
+}
+.container .m-nav li:after{
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 3;
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 1s ease;
+    transition: all 0.8s ease;
+}
+.container .m-nav li:nth-of-type(1){
+    background-image: url(../img/nba_thum1.jpg);
+}
+.container .m-nav li:nth-of-type(2){
+    background-image: url(../img/nba_thum2.jpg);
+}
+.container .m-nav li:nth-of-type(3){
+    background-image: url(../img/nba_thum3.jpg);
+}
+.container .m-nav li:nth-of-type(4){
+    background-image: url(../img/nba_thum4.jpg);
+}
+.container .m-nav li:hover{
+    -webkit-transform: scale(1.2);
+}
+.container .m-nav li:hover:after{
+    opacity: 0;
+}
+
+.container .m-nav li a{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes zoomIn {
+    0% { -webkit-transform: scale(0.1);}
+    100% { -webkit-transform: scale(1);}
+}
+@keyframes slideLeft{
+    0% { -webkit-transform: scale(0.1);}
+    100% { -webkit-transform: scale(1);}
+}
+
+@-webkit-keyframes zoomOut {
+    0% { -webkit-transform: scale(3); }
+    100% { -webkit-transform: none; }
+}
+@keyframes zoomOut {
+    0% { -webkit-transform: scale(3); }
+    100% { -webkit-transform: none; }
+}
+
+@-webkit-keyframes rotate {
+    0% { -webkit-transform: rotate(-720deg) scale(0.1); }
+    100% { -webkit-transform: rotate(0) scale(1); }
+}
+@keyframes rotate {
+    0% { -webkit-transform: rotate(-720deg) scale(0.1); }
+    100% { -webkit-transform: rotate(0) scale(1); }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes slideBottom {
+    0% { top: 100%; }
+    100% { top: 0; }
+}
+@keyframes slideBottom {
+    0% { top: 100%; }
+    100% { top: 0; }
+}
+.container .m-imgs img:target{
+    display: block;
+    z-index: 6;
+}
+.container .m-imgs #i-Iverson:target{
+    -webkit-animation: zoomIn 1s ;
+}
+.container .m-imgs #i-Kobe:target{
+    -webkit-animation: zoomOut 1s ;
+}
+.container .m-imgs #i-Tracy:target{
+    -webkit-animation: rotate 1s ;
+}
+.container .m-imgs #i-Carter:target{
+    -webkit-animation: fadeIn 1s ;
+}
+.container .m-imgs img:not(:target){
+    z-index: 5;
+    display: none;
+}
