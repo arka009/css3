@@ -19,7 +19,24 @@ html,body{
     position: relative;
     height: 100%;
 }
-
+.container h1{
+    position: relative;
+    z-index: 100;
+    top: 100px;
+    text-align: center;
+}
+.container h1 span{
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8),6px 6px rgba(197, 223, 248,0.8);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.container h1 span:hover{
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de;
+    -webkit-animation: shake-little 100ms ease-in-out infinite 0.4s;
+    animation: shake-little 100ms ease-in-out infinite 0.4s;
+}
 .container .m-imgs{
     position: absolute;
     top: 0;
@@ -104,12 +121,50 @@ html,body{
     width: 100%;
     height: 100%;
 }
+.container .m-imgs img:target{
+    display: block;
+    z-index: 6;
+}
+.container .m-imgs #i-Iverson:target{
+    -webkit-animation: zoomIn 1s ;
+}
+.container .m-imgs #i-Kobe:target{
+    -webkit-animation: zoomOut 1s ;
+}
+.container .m-imgs #i-Tracy:target{
+    -webkit-animation: rotate 1s ;
+}
+.container .m-imgs #i-Carter:target{
+    -webkit-animation: fadeIn 1s ;
+}
+.container .m-imgs img:not(:target){
+    z-index: 5;
+    display: none;
+}
 
+@-webkit-keyframes shake-little {
+    2%  { transform: translate(1px, 1px) rotate(0.5deg); }
+    20% { transform: translate(1px, 0px) rotate(0.5deg); }
+    38% { transform: translate(0px, 0px) rotate(0.5deg); }
+    56% { transform: translate(1px, 1px) rotate(0.5deg); }
+    72% { transform: translate(0px, 0px) rotate(0.5deg); }
+    90% { transform: translate(1px, 1px) rotate(0.5deg); }
+    0%, 100% { transform: translate(0, 0) rotate(0deg);  }
+}
+@keyframes shake-little {
+    2%  { transform: translate(1px, 1px) rotate(0.5deg); }
+    20% { transform: translate(1px, 0px) rotate(0.5deg); }
+    38% { transform: translate(0px, 0px) rotate(0.5deg); }
+    56% { transform: translate(1px, 1px) rotate(0.5deg); }
+    72% { transform: translate(0px, 0px) rotate(0.5deg); }
+    90% { transform: translate(1px, 1px) rotate(0.5deg); }
+    0%, 100% { transform: translate(0, 0) rotate(0deg);  }
+}
 @-webkit-keyframes zoomIn {
     0% { -webkit-transform: scale(0.1);}
     100% { -webkit-transform: scale(1);}
 }
-@keyframes slideLeft{
+@keyframes zoomIn{
     0% { -webkit-transform: scale(0.1);}
     100% { -webkit-transform: scale(1);}
 }
@@ -147,24 +202,4 @@ html,body{
 @keyframes slideBottom {
     0% { top: 100%; }
     100% { top: 0; }
-}
-.container .m-imgs img:target{
-    display: block;
-    z-index: 6;
-}
-.container .m-imgs #i-Iverson:target{
-    -webkit-animation: zoomIn 1s ;
-}
-.container .m-imgs #i-Kobe:target{
-    -webkit-animation: zoomOut 1s ;
-}
-.container .m-imgs #i-Tracy:target{
-    -webkit-animation: rotate 1s ;
-}
-.container .m-imgs #i-Carter:target{
-    -webkit-animation: fadeIn 1s ;
-}
-.container .m-imgs img:not(:target){
-    z-index: 5;
-    display: none;
 }
