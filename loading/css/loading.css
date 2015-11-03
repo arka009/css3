@@ -20,10 +20,15 @@ html,body{
     height: 100%;
     margin: 40px;
 }
-
-.loading-1{
-
+.loading-item{
+    float: left;
+    margin-right: 10px;
+    text-align: center;
 }
+h2{
+    margin-bottom: 10px;
+}
+
 .loading-1 > div{
     display: inline-block;
     width: 4px;
@@ -60,6 +65,52 @@ html,body{
     20%{
         -webkit-transform: scaleY(1);
         transform: scaleY(1);
+    }
+
+}
+@keyframes loading1 {
+    0%,
+    40%,
+    100%{
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+    20%{
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+
+}
+
+.loading-2 >div{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 4px rgba(100, 100, 100, 0.4);
+    border-left-color: rgba(0, 0, 0, 1);
+    -webkit-animation: loading2 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes loading2 {
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes loading2 {
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 
 }
