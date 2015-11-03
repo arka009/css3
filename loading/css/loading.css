@@ -90,6 +90,7 @@ h2{
     border: solid 4px rgba(100, 100, 100, 0.4);
     border-left-color: rgba(0, 0, 0, 1);
     -webkit-animation: loading2 1s infinite ease-in-out;
+    animation: loading2 1s infinite ease-in-out;
 }
 
 @-webkit-keyframes loading2 {
@@ -104,6 +105,99 @@ h2{
 
 }
 @keyframes loading2 {
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+}
+
+.loading-3 > div{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-animation: loading3 1.5s infinite ease;
+    animation: loading3 1.5s infinite ease;
+}
+@-webkit-keyframes loading3 {
+    0% {
+        -webkit-transform: perspective(150px);
+        transform: perspective(150px);
+    }
+    50% {
+        -webkit-transform: perspective(150px) rotateY(180deg);
+        transform: perspective(150px) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: perspective(150px) rotateY(180deg)  rotateX(180deg);
+        transform: perspective(150px) rotateY(180deg)  rotateX(180deg);
+    }
+
+}
+@keyframes loading3 {
+    0% {
+        -webkit-transform: perspective(150px);
+        transform: perspective(150px);
+    }
+    50% {
+        -webkit-transform: perspective(150px) rotateY(180deg);
+        transform: perspective(150px) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: perspective(150px) rotateY(180deg)  rotateX(180deg);
+        transform: perspective(150px) rotateY(180deg)  rotateX(180deg);
+    }
+
+}
+
+.loading-4 > div{
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 2px rgba(0, 0, 0, 0.8);
+}
+.loading-4 > div:before,
+.loading-4 > div:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    margin-top: -1px;
+    width: 2px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transform-origin: 1px 1px;
+
+}
+.loading-4 > div:before{
+    -webkit-animation: loading4 1s infinite linear;
+    animation: loading4 1s infinite linear;
+}
+.loading-4 > div:after{
+    height: 8px;
+    -webkit-animation: loading4 12s infinite linear;
+    animation: loading4 12s infinite linear;
+}
+@-webkit-keyframes loading4 {
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes loading4 {
     0%{
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
