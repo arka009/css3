@@ -31,8 +31,8 @@ h2{
 
 .loading-1 > div{
     display: inline-block;
-    width: 4px;
-    height: 30px;
+    width: 6px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.8);
     -webkit-animation: loading1 1.2s infinite ease-out;
     animation: loading1 1.2s infinite ease-out;
@@ -84,10 +84,10 @@ h2{
 
 .loading-2 >div{
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: solid 4px rgba(100, 100, 100, 0.4);
+    border: solid 6px rgba(100, 100, 100, 0.4);
     border-left-color: rgba(0, 0, 0, 1);
     -webkit-animation: loading2 1s infinite ease-in-out;
     animation: loading2 1s infinite ease-in-out;
@@ -118,8 +118,8 @@ h2{
 
 .loading-3 > div{
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.8);
     -webkit-animation: loading3 1.5s infinite ease;
     animation: loading3 1.5s infinite ease;
@@ -158,10 +158,10 @@ h2{
 .loading-4 > div{
     display: inline-block;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: solid 2px rgba(0, 0, 0, 0.8);
+    border: solid 6px rgba(0, 0, 0, 0.8);
 }
 .loading-4 > div:before,
 .loading-4 > div:after{
@@ -171,10 +171,10 @@ h2{
     left: 50%;
     margin-left: -1px;
     margin-top: -1px;
-    width: 2px;
-    height: 12px;
+    width: 4px;
+    height: 16px;
     background-color: rgba(0, 0, 0, 0.8);
-    -webkit-transform-origin: 1px 1px;
+    -webkit-transform-origin: 2px 1px;
 
 }
 .loading-4 > div:before{
@@ -182,7 +182,7 @@ h2{
     animation: loading4 1s infinite linear;
 }
 .loading-4 > div:after{
-    height: 8px;
+    height: 10px;
     -webkit-animation: loading4 12s infinite linear;
     animation: loading4 12s infinite linear;
 }
@@ -207,4 +207,74 @@ h2{
         transform: rotate(360deg);
     }
 
+}
+
+.loading-5 > div{
+    padding-top: 5px;
+}
+.loading-5 > div >div{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 4px rgba(0, 0, 0, 0.8);
+    margin-right: 4px;
+    position: relative;
+}
+.loading-5 > div >div>div{
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    -webkit-animation: loading5 1.5s infinite ease-in-out;
+    animation: loading5 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes loading5 {
+    0%{
+        left: 20%;
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 20%;
+    }
+
+}
+@keyframes loading5 {
+    0%{
+        left: 20%;
+    }
+    50%{
+        left: 50%;
+    }
+    100%{
+        left: 20%;
+    }
+
+}
+
+
+.loading-6 >div{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: dashed 4px rgba(0, 0 , 0, 0.8);
+    -webkit-animation: loading2 2s infinite linear;
+    animation: loading2 2s infinite linear;
+}
+.loading-6 >div:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border:solid 4px rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
 }
